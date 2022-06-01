@@ -1,4 +1,4 @@
-package com.extrieve.spring.data.jpa.Entity;
+package com.extrieve.spring.data.jpa.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -32,7 +32,9 @@ public class Student {
             generator = "student_sequence"
     )
     private Long studentId;
+    @Column(nullable = false)
     private String firstName;
+    @Column(nullable = false)
     private String lastName;
     @Column(
             name = "email_address",
