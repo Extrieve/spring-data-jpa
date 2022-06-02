@@ -39,11 +39,11 @@ class StudentRepositoryTest {
                 .build();
 
         Student student = Student.builder()
-            .firstName("John")
-            .lastName("Doe")
-            .emailId("john.doe@email.com")
-            .guardian(guardian)
-            .build();
+                .firstName("John")
+                .lastName("Doe")
+                .emailId("john.doe@email.com")
+                .guardian(guardian)
+                .build();
 
         studentRepository.save(student);
     }
@@ -67,4 +67,16 @@ class StudentRepositoryTest {
         students.forEach(System.out::println);
     }
 
+
+    @Test
+    public void printStudentByEmail() {
+        Student student = studentRepository.findByEmailAddress("gmcneilly0@moonfruit.com");
+        System.out.println(student);
+    }
+
+    @Test
+    public void printStudentNameByEmail() {
+        String name = studentRepository.findFirstNameByEmailAddress("gmcneilly0@moonfruit.com");
+        System.out.println(name);
+    }
 }
