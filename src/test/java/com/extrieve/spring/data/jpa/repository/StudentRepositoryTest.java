@@ -85,4 +85,10 @@ class StudentRepositoryTest {
         Student name = studentRepository.getStudentByEmailAddressNative("gmcneilly0@moonfruit.com");
         System.out.println(name.getFirstName());
     }
+
+    @Test
+    public void printStudentNameByEmailNativeNamedParam() {
+        Student name = studentRepository.getStudentByEmailAddressNativeNamedParam("gmcneilly0@moonfruit.com");
+        System.out.println(name.getFirstName());
+    }
 }
