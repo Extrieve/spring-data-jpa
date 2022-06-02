@@ -91,4 +91,13 @@ class StudentRepositoryTest {
         Student name = studentRepository.getStudentByEmailAddressNativeNamedParam("gmcneilly0@moonfruit.com");
         System.out.println(name.getFirstName());
     }
+
+    @Test
+    public void printUpdateStudentFirstNameNative() {
+        String firstName = "John";
+        studentRepository.updateStudentFirstNameNative(firstName, 1468L);
+        Student student = studentRepository.findByStudentId(1468L);
+        System.out.println(student.getFirstName());
+        System.out.println(student.getFirstName().equals(firstName));
+    }
 }
