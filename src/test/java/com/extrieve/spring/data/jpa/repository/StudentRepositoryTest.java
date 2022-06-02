@@ -48,6 +48,17 @@ class StudentRepositoryTest {
         studentRepository.save(student);
     }
 
+    @Test
+    public void printStudentByFirstName() {
+        List<Student> students = studentRepository.findByFirstName("John");
+        System.out.println(students);
+    }
+
+    @Test
+    public void printAllStudentsContaining() {
+        List<Student> students = studentRepository.findByFirstNameContaining("Jo");
+        System.out.println(students);
+    }
 
     @Test
     public void printAllStudents() {
