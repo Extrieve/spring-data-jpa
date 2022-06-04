@@ -26,4 +26,6 @@ public class Course {
     private Long courseId;
     private String courseTitle;
     private int courseCredits;
+
+//    private Teacher teacher;
 }
