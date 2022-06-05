@@ -34,4 +34,12 @@ class TeacherRepositoryTest {
         teacherRepository.save(teacher);
     }
 
+    @Test
+    public void fetchAllTeachers() throws Exception {
+
+            List<Teacher> teachers = teacherRepository.findAll();
+
+            teachers.forEach(teacher -> System.out.println(teacher));
+    }
+
 }
