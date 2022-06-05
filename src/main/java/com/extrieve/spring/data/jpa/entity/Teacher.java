@@ -28,13 +28,13 @@ public class Teacher {
     private String teacherName;
     private String teacherLastName;
 
-    @OneToMany(
-            mappedBy = "teacher",
-            cascade = CascadeType.ALL
-    )
-    @JoinColumn(
-            name = "teacher_id",
-            referencedColumnName = "teacherId"
-    )
-    private List<Course> courses;
+//    @OneToMany(
+////            mappedBy = "teacher",
+//            cascade = CascadeType.ALL
+//    )
+//    @JoinColumn(
+//            name = "teacher_id",
+//            referencedColumnName = "teacherId"
+//    )
+//    private List<Course> courses;
 }
