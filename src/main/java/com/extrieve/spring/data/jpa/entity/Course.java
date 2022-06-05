@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -42,7 +43,7 @@ public class Course {
     )
     private Teacher teacher;
 
-    
+
     @ManyToMany(
             cascade = CascadeType.ALL
     )
@@ -58,4 +59,11 @@ public class Course {
             )
     )
     private List<Student> students;
+
+    public void addStudent(Student student) {
+        if(students == null) {
+            students = new ArrayList<>();
+        }
+        students.add(student);
+    }
 }

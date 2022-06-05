@@ -1,6 +1,7 @@
 package com.extrieve.spring.data.jpa.repository;
 
 import com.extrieve.spring.data.jpa.entity.Course;
+import com.extrieve.spring.data.jpa.entity.Student;
 import com.extrieve.spring.data.jpa.entity.Teacher;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -93,5 +94,26 @@ class CourseRepositoryTest {
         List<Course> courses = courseRepository.findByCourseTitleContaining("Python", firstPageWith10).getContent();
 
         courses.forEach(System.out::println);
+    }
+
+    @Test
+    public void saveCourseWithStudentAndTeacher() throws Exception {
+
+        Course course = Course.builder()
+                .courseTitle("Python")
+                .courseCredits(4)
+                .teacher(Teacher.builder()
+                        .teacherName("John")
+                        .teacherLastName("Doe")
+                        .build())
+                .build();
+
+        course.addStudent(Student.builder()
+                .firstName("John")
+                .lastName("Doe")
+                .build());
+
+        System.out.println(course);
+        courseRepository.save(course);
     }
 }
